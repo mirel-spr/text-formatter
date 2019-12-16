@@ -1,0 +1,14 @@
+{
+  "name": "typing-editor",
+  "version": "0.1.0",
+  "description": "another trial of the typing editor",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "mirelspringer <mirel.spr@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^7.1.5"
+  }
+}
