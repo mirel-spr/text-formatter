@@ -37,6 +37,13 @@ function applyFormattingRules() {
 
 app.on('ready', createWindow);
 
+let nodeConsole = require('console');
+let myConsole = new nodeConsole.Console(process.stdout, process.stderr);
+myConsole.log('It works!!!!!');
+
+// const con = require('electron').remote.getGlobal('console');
+// con.log('This is output to main process console.');
+
 app.on('window-all-closed', () => {
 	if (process.platform !== 'darwin') {
 		app.quit();
