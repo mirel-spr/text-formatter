@@ -1,20 +1,24 @@
+/*#region textarea */
 textarea {
   width: 600px;
   border-width: 0;
   margin-left: 10px;
   padding: 5px;
-  outline: none;
 }
 
-/* .form-group {
-  margin-left: 10px;
-  margin-right: 10px;
-} */
+textarea.form-control {
+  height: 300px !important;
+  min-height: 50px;
+  resize: none;
+}
+
+textarea.form-control:focus {
+  border-color: #a6a6a6;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+/*#endregion textarea */
 
 body {
   padding: 20px;
 }
-
-/* textarea:focus {
-  border: 5px solid #555;
-} */

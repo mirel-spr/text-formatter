@@ -1,7 +1,7 @@
 const electron = require('electron');
 const { app, BrowserWindow } = require('electron');
 
-const letterCombosULine = [ 'qu', 'ck,' 'ff', 'ss', 'll,' 'zz',
+const letterCombosULine = [ 'qu', 'ck', 'ff', 'ss', 'll', 'zz',
 'ch', 'ar', 'sh', 'or', 'th', 'ur', 'ng', 'ow', 'ai', 'oi', 'ee',
 'ear', 'igh', 'air', 'oa', 'ure', 'oo', 'er', 'oy', 'ou', 'ay' ];
 
@@ -30,6 +30,10 @@ function createWindow() {
 		win = null;
 	});
 }
+
+function applyFormattingRules() {
+  console.log('called!');
+};
 
 app.on('ready', createWindow);
 
