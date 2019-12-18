@@ -1,5 +1,6 @@
 const electron = require('electron');
 const { app, BrowserWindow } = require('electron');
+const ipc = electron.ipcRenderer;
 
 const letterCombosULine = [ 'qu', 'ck', 'ff', 'ss', 'll', 'zz',
 'ch', 'ar', 'sh', 'or', 'th', 'ur', 'ng', 'ow', 'ai', 'oi', 'ee',
@@ -31,9 +32,9 @@ function createWindow() {
 	});
 }
 
-function applyFormattingRules() {
-  console.log('called!');
-};
+// function applyFormattingRules() {
+//   myConsole.log('called!');
+// };
 
 app.on('ready', createWindow);
 
@@ -41,8 +42,20 @@ let nodeConsole = require('console');
 let myConsole = new nodeConsole.Console(process.stdout, process.stderr);
 myConsole.log('It works!!!!!');
 
+const formattingBtn = document.getElementByName('applyRules');
+formattingBtn.addEventListener('click', function () {
+  alert('clicked!');
+  applyFormattingRules();
+});
+
 // const con = require('electron').remote.getGlobal('console');
 // con.log('This is output to main process console.');
+
+// const updateBtn = document.getElementById('updateBtn');
+//
+// updateBtn.addEventListener('click', function () {
+//   ipc.send('update-notify-value', document.getElementById('notifyVal').value);
+// });
 
 app.on('window-all-closed', () => {
 	if (process.platform !== 'darwin') {

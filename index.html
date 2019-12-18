@@ -1,24 +1,44 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
-  </head>
+	<head>
+		<meta charset="utf-8">
+		<title>Text Editor</title>
+		<meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';"/>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<script src="main.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-  <body>
-    <script>
-      const { ipcRenderer } = require('electron')
+	</head>
 
-      //Synchronous message emitter and handler
-      console.log(ipcRenderer.sendSync('synchronous-message', 'sync ping'));
+	<body>
 
-      //Async message handler
-      ipcRenderer.on('asynchronous-reply', (event, arg) => {
-        console.log(arg);
-      });
+		<h1>Text Editor</h1>
 
-      //Async message sender
-      ipcRenderer.send('asynchronous-message', 'async ping');
-    </script>
-  </body>
+		<div class="form-group">
+			<!-- <label for="maintextbox"></label> -->
+			<textarea class="form-control" id="maintextbox"
+			placeholder="Type something..." rows="3"></textarea>
+			<textarea class="form-control" id="othertextbox"
+			placeholder="Type something else..." rows="3"></textarea>
+		</div>
+
+		<!-- <textarea name="mainTextBox" autofocus=true rows="20" wrap="soft">Type something...</textarea> -->
+		<button type="button" class="btn btn-secondary" name="applyRules" onclick="applyFormattingRules()">Apply formatting</button>
+
+		<button class="btn btn-secondary" id="countBtn" onclick="countClicks()">Click here</button>
+		<input type="text" class="input-group-text" id="countInput">
+		<script src='./renderer.js'></script>
+	</body>
+
+	<!-- <script>
+		let ipc = require('electron').ipcRenderer;
+		let formattingBtn = document.getElementByName('applyRules');
+		formattingBtn.addEventListener('click', function () {
+			ipc.once('actionReply', function(event, response) {
+				processResponse(response);
+			});
+			ipc.send('invokeAction', 'someData');
+		});
+	</script> -->
+
 </html>
