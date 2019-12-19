@@ -6,11 +6,11 @@ const letterCombosULine = [ 'qu', 'ck', 'ff', 'ss', 'll', 'zz',
 'ch', 'ar', 'sh', 'or', 'th', 'ur', 'ng', 'ow', 'ai', 'oi', 'ee',
 'ear', 'igh', 'air', 'oa', 'ure', 'oo', 'er', 'oy', 'ou', 'ay' ];
 
-const wordsRed = [ 'the', 'to', 'I', 'go', 'no', 'in', 'he', 'she',
+const redWords = [ 'the', 'to', 'i', 'go', 'no', 'in', 'he', 'she',
  'we', 'me', 'be', 'was', 'my', 'you', 'her', 'they', 'all', 'are',
   'said', 'so', 'do', 'have', 'like', 'some', 'come', 'were',
-	 'there', 'little', 'one', 'when', 'out', 'what', 'Peter',
-	  'Jane', 'water', 'here' ];
+	 'there', 'little', 'one', 'when', 'out', 'what', 'peter',
+	  'jane', 'water', 'here' ];
 
 const lettersUDot = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
  'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'r', 's', 't', 'u',
@@ -42,11 +42,11 @@ let nodeConsole = require('console');
 let myConsole = new nodeConsole.Console(process.stdout, process.stderr);
 myConsole.log('It works!!!!!');
 
-const formattingBtn = document.getElementByName('applyRules');
-formattingBtn.addEventListener('click', function () {
-  alert('clicked!');
-  applyFormattingRules();
-});
+// const formattingBtn = document.getElementByName('applyRules');
+// formattingBtn.addEventListener('click', function () {
+//   alert('clicked!');
+//   applyFormattingRules();
+// });
 
 // const con = require('electron').remote.getGlobal('console');
 // con.log('This is output to main process console.');
